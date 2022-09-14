@@ -1,0 +1,43 @@
+<div class="col-md-4 col-lg-5">
+    <app-form-add-task></app-form-add-task>
+  </div>
+  <div class="col-md-8 col-lg-7">
+    <app-task-list></app-task-list>
+  </div>
+
+<mat-card>
+  <div class="container text-center">
+    <img src="./assets/img/addTask.png" alt="Icon add Task" />
+  </div>
+  <form (ngSubmit)="formSubmit()">
+    <mat-form-field class="fill col-md-10 offset-md-1" appearance="fill">
+      <mat-label>Ingrese la tarea</mat-label>
+      <input
+        type="text"
+        [(ngModel)]="task.nameTask"
+        name="nameTask"
+        matInput
+        placeholder="Digite el nombre de la tarea"
+        required
+        
+      />
+    </mat-form-field>
+    <mat-form-field class="fill col-md-10 offset-md-1" appearance="fill">
+        <mat-label>Ingrese una descripcion de la tarea</mat-label>
+        <input
+          type="text"
+          [(ngModel)]="task.descriptionTask"
+          name="descriptionTask"
+          matInput
+        placeholder="Digite la descripción de la tarea"
+        required
+        
+        />
+      </mat-form-field>
+     
+      <div class="mt-2 d-flex justify-content-center">
+        <button mat-raised-button color="primary" >Enviar</button>
+        <button type="reset" mat-raised-button color="accent" class="ms-2">Limpiar</button>
+      </div>
+  </form>
+</mat-card>
